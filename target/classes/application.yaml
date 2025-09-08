@@ -1,0 +1,18 @@
+spring:
+  data:
+    mongodb:
+      sourceUri: mongodb://localhost:27077/?replicaSet=myRepl
+      targetUri: mongodb://localhost:27088/?replicaSet=newRepl
+      ignore-databases:
+        - test
+        - admin
+        - config
+        - local
+      include-databases:
+        - myTestRepl
+      token-collection:
+        database: csTrack
+        collection: csToken
+        size: 104857600
+server:
+  port: 9094
